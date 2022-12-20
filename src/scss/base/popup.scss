@@ -1,0 +1,251 @@
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+
+.popup-show body::after {
+	opacity: 1;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.popup_show {
+	z-index: 150;
+	visibility: visible;
+	overflow: auto;
+	pointer-events: auto;
+}
+
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background: #F2F7FB;
+	width: 100%;
+	max-width: 900px;
+	border-radius: 20px;
+
+	.lock & {
+		visibility: visible;
+	}
+}
+
+.popup {
+
+	&__text {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__img {
+		position: relative;
+		border-radius: 20px;
+		width: 350px;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-top-left-radius: 20px;
+			border-bottom-left-radius: 20px;
+		}
+	}
+
+	&__contentcard {
+		position: relative;
+		padding: 40px 100px 40px 40px;
+
+		@media (max-width:$tablet) {
+			padding: 40px;
+		}
+
+		@media (max-width:$mobile) {
+			padding: 30px;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 20px;
+		right: 20px;
+	}
+
+	&__content-title {
+		@include adaptiveValue("margin-top", 40, 0);
+		font-weight: 800;
+		@include adaptiveValue("font-size", 28, 22);
+		line-height: math.div(34, 28);
+		margin-bottom: 15px;
+	}
+
+	&__content-text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: math.div(20, 16);
+		@include adaptiveValue("margin-bottom", 34, 20);
+	}
+
+	&__content-group {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		label {
+			font-weight: 800;
+			line-height: math.div(20, 16);
+			margin-bottom: 6px;
+		}
+
+		span {
+			color: red;
+		}
+	}
+
+	&__content-group-input {}
+}
+
+::placeholder {
+	font-weight: 400;
+	color: #C9C9C9;
+}
+
+.input__group {
+	position: relative;
+
+	&-icon {
+		position: absolute;
+		width: 30px;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		margin-left: 20px;
+
+		&::before {
+			color: #C9C9C9;
+			margin-right: 20px;
+		}
+	}
+}
+
+.form-sutitle {
+	display: block;
+	margin-top: 20px;
+	font-weight: 300;
+	@include adaptiveValue("font-size", 14, 12);
+	line-height: math.div(15, 14);
+	text-align: center;
+}
+
+.form-btn {
+	margin-top: rem(40);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: red;
+	color: #fff;
+}
+
+
+
+.popup {
+
+	&__wrapper {}
+
+	&__content {
+		&-close {
+			background: #F2F7FB;
+			border: 1px solid #003976;
+			border-radius: 10px;
+			padding: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+			max-width: 600px;
+
+			@media (max-width:$tablet) {
+				padding: 40px;
+			}
+
+			@media (max-width:$mobile) {
+				padding: 20px;
+			}
+		}
+	}
+
+	&__close-btn {
+		background-color: red;
+		color: #fff;
+		box-shadow: 0px 7px 35px rgba(0, 57, 118, 0.7);
+		border-radius: 20px;
+		padding: 12px 45px;
+		font-weight: 800;
+		font-size: 17px;
+		text-transform: uppercase;
+	}
+}
+
+.popupclose {
+
+	&__text {}
+
+	&__text-close {
+		font-weight: 800;
+		@include adaptiveValue("font-size", 32, 26);
+		line-height: math.div(39, 32);
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__text-subtitleclose {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 15, 14);
+		line-height: math.div(18, 15);
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+}

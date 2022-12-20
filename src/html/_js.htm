@@ -1,0 +1,122 @@
+<script src="js/app.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"
+	integrity="sha512-oUUeA7VTcWBqUJD/VYCBB4VeIE0g1pg5aRMiSUOMGnNNeCLRS39OlkcyyeJ0hYx2h3zxmIWhyKiUXKkfZ5Wryg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script>
+	window.addEventListener("DOMContentLoaded", function () {
+		[].forEach.call(document.querySelectorAll('.tel'), function (input) {
+			var keyCode;
+
+			function mask(event) {
+				event.keyCode && (keyCode = event.keyCode);
+				var pos = this.selectionStart;
+				if (pos < 3) event.preventDefault();
+				var matrix = "+7 (___) ___ ____",
+					i = 0,
+					def = matrix.replace(/\D/g, ""),
+					val = this.value.replace(/\D/g, ""),
+					new_value = matrix.replace(/[_\d]/g, function (a) {
+						return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+					});
+				i = new_value.indexOf("_");
+				if (i != -1) {
+					i < 5 && (i = 3);
+					new_value = new_value.slice(0, i)
+				}
+				var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+					function (a) {
+						return "\\d{1," + a.length + "}"
+					}).replace(/[+()]/g, "\\$&");
+				reg = new RegExp("^" + reg + "$");
+				if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value =
+					new_value;
+				if (event.type == "blur" && this.value.length < 5) this.value = ""
+			}
+
+			input.addEventListener("input", mask, false);
+			input.addEventListener("focus", mask, false);
+			input.addEventListener("blur", mask, false);
+			input.addEventListener("keydown", mask, false)
+
+		});
+
+	});
+</script>
+
+<script>
+	function onEntry(entry) {
+		entry.forEach(change => {
+			if (change.isIntersecting) {
+				change.target.classList.add('element-show');
+			}
+		});
+	}
+
+	let options = {
+		threshold: [0.5]
+	};
+	let observer = new IntersectionObserver(onEntry, options);
+	let elements = document.querySelectorAll('.element-animation');
+
+	for (let elm of elements) {
+		observer.observe(elm);
+	}
+</script>
+
+<script>
+	window.onload = function () {
+		document.body.classList.add('loaded');
+	}
+</script>
+
+<script>
+	window.onload = function () {
+		document.body.classList.add('loaded_hiding');
+		window.setTimeout(function () {
+			document.body.classList.add('loaded');
+			document.body.classList.remove('loaded_hiding');
+		}, 500);
+	}
+</script>
+
+<script>
+	// Here, the ease animation will be use for the global drawing.
+	new Vivus(
+		'mysvg1', {
+			type: 'sync',
+			duration: 400,
+		},
+	);
+
+	new Vivus(
+		'mysvg2', {
+			type: 'sync',
+			duration: 400,
+		},
+	);
+	new Vivus(
+		'mysvg3', {
+			type: 'sync',
+			duration: 200,
+		},
+	);
+	new Vivus(
+		'mysvg4', {
+			type: 'sync',
+			duration: 180,
+		},
+	);
+	new Vivus(
+		'mysvg5', {
+			type: 'sync',
+			duration: 700,
+		},
+	);
+</script>

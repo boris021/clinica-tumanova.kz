@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Качественное лечение зависимостей в современной клинике</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20221220174904">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__row">
+					<a href="" class="header__logo"><img src="img/logo.svg" alt=""></a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="" class="menu__link">Направления</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Специалисты</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Преимущества</a></li>
+								<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div data-da=".menu__body, 992, 2" class="header__contact">
+						<a href="tel:+77029809669" class="header__contact-link">+7(702) 980 96 69</a>
+						<a href="tel:+77768775022" class="header__contact-link">+7(776) 877 50 22</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+
+			<section class="main">
+				<div class="main__container">
+					<h1 class="main__title"> Качественное лечение зависимостей <span>в современной клинике </span></h1>
+					<div class="main__subtitle">Профессиональная помощь вашим близким</div>
+					<a href="#" class="main__btn-btn">Получить консультацию</a>
+				</div>
+			</section>
+
+			<section class="start">
+				<div class="start__container">
+					<div class="start__row">
+						<div class="start__item">
+							<div class="start__item-box">
+								<img src="img/icon/01.svg" alt="icon">
+								<span class="start__item-box-title">Работаем с хххх года</span>
+							</div>
+							<div class="start__item-text">За эти годы мы помогли 1000 пациентам</div>
+						</div>
+						<div class="start__item">
+							<div class="start__item-box">
+								<img src="img/icon/02.svg" alt="icon">
+								<span class="start__item-box-title">Круглосуточная помощь</span>
+							</div>
+							<div class="start__item-text">Помогаем в удобное для Вас время</div>
+						</div>
+						<div class="start__item">
+							<div class="start__item-box">
+								<img src="img/icon/03.svg" alt="icon">
+								<span class="start__item-box-title">Полная анонимность</span>
+							</div>
+							<div class="start__item-text">Мы предоставляем гарантию полной анонимности</div>
+						</div>
+						<div class="start__item">
+							<div class="start__item-box">
+								<img src="img/icon/04.svg" alt="icon">
+								<span class="start__item-box-title">Доброжелательный персонал</span>
+							</div>
+							<div class="start__item-text">Мотивируем на лечение и помогаем после прохождения курса</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<span> © 2022 clinica-tumanova.kz </span>
+				<span>
+					<a href="https://a-media.kz/" target="_blank">Разработка сайта: a-media.kz </a>
+				</span>
+			</div>
+		</footer>
+
+		<div type="button" class="callback-bt">
+			<a href="https://api.whatsapp.com/send?phone=77029809669" target="_blank" rel="nofollow">
+				<div class="text-call">
+					<img src="img/icon/icon_whatsapp.svg">
+				</div>
+			</a>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20221220174904"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css?_v=20221220174904" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js?_v=20221220174904" integrity="sha512-oUUeA7VTcWBqUJD/VYCBB4VeIE0g1pg5aRMiSUOMGnNNeCLRS39OlkcyyeJ0hYx2h3zxmIWhyKiUXKkfZ5Wryg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css?_v=20221220174904">
+
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js?_v=20221220174904"></script>
+
+	<script>
+		window.addEventListener("DOMContentLoaded", function() {
+			[].forEach.call(document.querySelectorAll('.tel'), function(input) {
+				var keyCode;
+
+				function mask(event) {
+					event.keyCode && (keyCode = event.keyCode);
+					var pos = this.selectionStart;
+					if (pos < 3) event.preventDefault();
+					var matrix = "+7 (___) ___ ____",
+						i = 0,
+						def = matrix.replace(/\D/g, ""),
+						val = this.value.replace(/\D/g, ""),
+						new_value = matrix.replace(/[_\d]/g, function(a) {
+							return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+						});
+					i = new_value.indexOf("_");
+					if (i != -1) {
+						i < 5 && (i = 3);
+						new_value = new_value.slice(0, i)
+					}
+					var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+						function(a) {
+							return "\\d{1," + a.length + "}"
+						}).replace(/[+()]/g, "\\$&");
+					reg = new RegExp("^" + reg + "$");
+					if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value =
+						new_value;
+					if (event.type == "blur" && this.value.length < 5) this.value = ""
+				}
+
+				input.addEventListener("input", mask, false);
+				input.addEventListener("focus", mask, false);
+				input.addEventListener("blur", mask, false);
+				input.addEventListener("keydown", mask, false)
+
+			});
+
+		});
+	</script>
+
+	<script>
+		function onEntry(entry) {
+			entry.forEach(change => {
+				if (change.isIntersecting) {
+					change.target.classList.add('element-show');
+				}
+			});
+		}
+
+		let options = {
+			threshold: [0.5]
+		};
+		let observer = new IntersectionObserver(onEntry, options);
+		let elements = document.querySelectorAll('.element-animation');
+
+		for (let elm of elements) {
+			observer.observe(elm);
+		}
+	</script>
+
+	<script>
+		window.onload = function() {
+			document.body.classList.add('loaded');
+		}
+	</script>
+
+	<script>
+		window.onload = function() {
+			document.body.classList.add('loaded_hiding');
+			window.setTimeout(function() {
+				document.body.classList.add('loaded');
+				document.body.classList.remove('loaded_hiding');
+			}, 500);
+		}
+	</script>
+
+	<script>
+		// Here, the ease animation will be use for the global drawing.
+		new Vivus(
+			'mysvg1', {
+				type: 'sync',
+				duration: 400,
+			},
+		);
+
+		new Vivus(
+			'mysvg2', {
+				type: 'sync',
+				duration: 400,
+			},
+		);
+		new Vivus(
+			'mysvg3', {
+				type: 'sync',
+				duration: 200,
+			},
+		);
+		new Vivus(
+			'mysvg4', {
+				type: 'sync',
+				duration: 180,
+			},
+		);
+		new Vivus(
+			'mysvg5', {
+				type: 'sync',
+				duration: 700,
+			},
+		);
+	</script>
+</body>
+
+</html>
