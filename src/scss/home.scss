@@ -117,3 +117,287 @@
 		line-height: math.div(18, 15);
 	}
 }
+
+// way ========================================================================================================================================================
+.way {
+	@include adaptiveValue("margin-bottom", 100, 40);
+
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("margin-bottom", 50, 25);
+	}
+
+	&__title {
+
+
+		span {
+			color: $blColor;
+		}
+	}
+
+	&__slider {
+		position: relative;
+		height: 400px;
+	}
+
+	&__btn {
+		content: '';
+		position: absolute;
+		height: 0%;
+		top: 50%;
+		right: 0;
+		transform: translate(0, -17px);
+
+		@media (max-width: em(630)) {
+			display: none;
+		}
+	}
+
+	&__slide {
+		position: relative;
+		color: #fff;
+		padding: 60px;
+
+		&-bg {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			object-fit: cover;
+			border-radius: 20px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 64px;
+			height: 48px;
+			bottom: 50px;
+			left: 60px;
+			background: url(../img/icon/plus.svg) center center no-repeat;
+
+			@media (max-width:$mobile) {
+				display: none;
+			}
+		}
+
+		@media (max-width:$mobile) {
+			padding: 25px;
+		}
+
+	}
+
+	&__slide-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 48, 26);
+		line-height: math.div(59, 48);
+		@include adaptiveValue("margin-bottom", 40, 20);
+	}
+
+	&__slide-text {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 22, 16);
+		line-height: math.div(29, 24);
+
+		@media (max-width:$mobile) {
+			font-weight: 400;
+		}
+	}
+}
+
+// doctor ========================================================================================================================================================
+
+.doctor {
+	@include adaptiveValue("margin-bottom", 100, 40);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+
+	&__left {
+		flex: 0 1 50%;
+
+		@media (max-width: em(1127)) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__left-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 48, 30);
+		line-height: math.div(59, 48);
+		@include adaptiveValue("margin-bottom", 24, 15);
+
+		span {
+			color: #1093A5;
+		}
+	}
+
+	&__left-name {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 24, 20);
+		line-height: math.div(29, 24);
+		@include adaptiveValue("margin-bottom", 24, 15);
+	}
+
+	&__left-prof {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 20, 18);
+		line-height: math.div(24, 20);
+		@include adaptiveValue("margin-bottom", 24, 15);
+		color: #4F4F4F;
+	}
+
+	&__left-item {}
+
+	&__left-list {
+		li {
+			position: relative;
+			font-weight: 600;
+			@include adaptiveValue("font-size", 16, 14);
+			line-height: 20px;
+			padding-left: 30px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				background-color: $blColor;
+				top: 0%;
+				border-radius: 50%;
+				left: 0;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__right {
+		width: 570px;
+		margin: auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+		}
+	}
+}
+
+// spec ========================================================================================================================================================
+.spec {
+	@include adaptiveValue("margin-bottom", 100, 40);
+
+	&__container {}
+
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("margin-bottom", 50, 25);
+
+
+	}
+
+	&__title {}
+
+	&__slider {}
+
+	&__wrapper {}
+
+	&__slide {}
+
+	&__slide-content {
+		background: #FFFFFF;
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+		border-radius: 20px;
+		padding: 20px 30px;
+		display: flex;
+		align-items: center;
+
+		@media (max-width:$mobile) {
+			flex-direction: column;
+		}
+
+		img {
+			width: 171px;
+			border-radius: 10px;
+			margin-right: 18px;
+
+			@media (max-width:$mobile) {
+				margin-right: 0;
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__slide-box {}
+
+	&__slide-box-name {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 20, 18);
+		line-height: math.div(24, 20);
+		margin-bottom: 8px;
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
+	}
+
+	&__slide-box-prof {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: math.div(20, 16);
+		color: #828282;
+		margin-bottom: 8px;
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
+	}
+
+	&__slide-box-text {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: math.div(20, 16);
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
+	}
+}
+
+.title {}
+
+.way {
+
+	&__btn {}
+}
+
+.way-prev {}
+
+.swiper-buttonway-prev {}
+
+.way-next {}
+
+.swiper-buttonway-next {}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
