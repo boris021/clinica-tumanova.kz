@@ -1,19 +1,19 @@
 //<FORM>
 // Сниппет (HTML):
 .form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
-	}
+	&__row {}
+
+	&__column {}
+
+	&__line {}
+
+	&__input {}
+
+	&__button {}
+
+	&__error {}
 }
+
 //</FORM>
 
 // <BUTTONS>
@@ -22,7 +22,7 @@
 
 // <INPUTS>
 // Сниппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сниппет (HTML): chk

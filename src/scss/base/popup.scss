@@ -163,6 +163,11 @@ body::after {
 		transform: translateY(-50%);
 		right: 0;
 		margin-left: 20px;
+		margin-right: 10px;
+
+		img {
+			width: 20px;
+		}
 
 		&::before {
 			color: #C9C9C9;
@@ -186,8 +191,18 @@ body::after {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: red;
+	background: linear-gradient(90deg, #04607A 0%, #04607A 0.01%, #22B7CC 98.19%);
+	box-shadow: 10px 10px 47px rgba(16, 147, 165, 0.3);
+	border-radius: 10px;
+	padding: 20px;
 	color: #fff;
+	font-weight: 700;
+	font-size: 17px;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		opacity: 0.8;
+	}
 }
 
 
@@ -220,10 +235,10 @@ body::after {
 	}
 
 	&__close-btn {
-		background-color: red;
-		color: #fff;
-		box-shadow: 0px 7px 35px rgba(0, 57, 118, 0.7);
+		background: #04607A;
+		box-shadow: 0px 7px 35px rgba(16, 147, 165, 0.4);
 		border-radius: 20px;
+		color: #fff;
 		padding: 12px 45px;
 		font-weight: 800;
 		font-size: 17px;

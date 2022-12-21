@@ -132,6 +132,55 @@ function initSliders() {
 				},
 			},
 		});
+
+		// второй слайдер
+		new Swiper('.swiper-place', {
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 3,
+			spaceBetween: 30,
+			loop: true,
+			speed: 800,
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.swiper-buttonplace-prev',
+				nextEl: '.swiper-buttonplace-next',
+			},
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+
+			// Брейкпоінти
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 1,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+			},
+		});
+
+
+
 	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
