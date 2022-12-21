@@ -23,6 +23,8 @@
 	}
 
 	&__logo {
+		z-index: 5;
+
 		img {
 			max-width: 128px;
 
@@ -33,6 +35,7 @@
 	}
 
 	&__contact {
+		z-index: 5;
 		display: flex;
 		flex-direction: column;
 

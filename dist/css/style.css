@@ -593,11 +593,16 @@ body::after {
           justify-content: space-between;
 }
 
+.header__logo {
+  z-index: 5;
+}
+
 .header__logo img {
   max-width: 128px;
 }
 
 .header__contact {
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1400,6 +1405,50 @@ body::after {
 .about__right img {
   border-radius: 20px;
   max-width: 100%;
+}
+
+.step__row {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 330px);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+
+.step__card {
+  position: relative;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 35px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.step__card::before {
+  content: "";
+  position: absolute;
+  width: 64px;
+  height: 50px;
+  top: 10px;
+  right: 10px;
+  background: url(../img/icon/plus-step.svg) center center no-repeat;
+}
+
+.step__card-title {
+  font-weight: 700;
+  line-height: 1.2291666667;
+  margin-bottom: 11px;
+  color: #1093A5;
+}
+
+.step__card-text {
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 .swiper {
@@ -2462,6 +2511,22 @@ button.swiper-pagination-bullet {
   .about__left p {
     margin-bottom: 1.5rem;
   }
+
+  .step {
+    margin-bottom: 6.25rem;
+  }
+
+  .step__title {
+    margin-bottom: 3.125rem;
+  }
+
+  .step__card-title {
+    font-size: 3rem;
+  }
+
+  .step__card-text {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -2659,6 +2724,22 @@ button.swiper-pagination-bullet {
 
   .about__left p {
     margin-bottom: 0.9375rem;
+  }
+
+  .step {
+    margin-bottom: 2.5rem;
+  }
+
+  .step__title {
+    margin-bottom: 1.875rem;
+  }
+
+  .step__card-title {
+    font-size: 2.5rem;
+  }
+
+  .step__card-text {
+    font-size: 0.875rem;
   }
 }
 
@@ -2984,6 +3065,19 @@ button.swiper-pagination-bullet {
 
   .advanced__card img {
     width: 50px;
+  }
+
+  .step__row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .step__card {
+    padding: 25px;
   }
 }
 
@@ -3581,10 +3675,64 @@ button.swiper-pagination-bullet {
       margin-bottom: calc(0.9375rem + 0.5625 * (100vw - 20rem) / 70);
     }
 }
+
+@supports (margin-bottom: clamp( 2.5rem , 1.4285714286rem  +  5.3571428571vw , 6.25rem )) {
+    .step {
+      margin-bottom: clamp( 2.5rem , 1.4285714286rem  +  5.3571428571vw , 6.25rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 2.5rem , 1.4285714286rem  +  5.3571428571vw , 6.25rem )) {
+    .step {
+      margin-bottom: calc(2.5rem + 3.75 * (100vw - 20rem) / 70);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem )) {
+    .step__title {
+      margin-bottom: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem )) {
+    .step__title {
+      margin-bottom: calc(1.875rem + 1.25 * (100vw - 20rem) / 70);
+    }
+}
+
+@supports (font-size: clamp( 2.5rem , 2.3571428571rem  +  0.7142857143vw , 3rem )) {
+    .step__card-title {
+      font-size: clamp( 2.5rem , 2.3571428571rem  +  0.7142857143vw , 3rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.3571428571rem  +  0.7142857143vw , 3rem )) {
+    .step__card-title {
+      font-size: calc(2.5rem + 0.5 * (100vw - 20rem) / 70);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8392857143rem  +  0.1785714286vw , 1rem )) {
+    .step__card-text {
+      font-size: clamp( 0.875rem , 0.8392857143rem  +  0.1785714286vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8392857143rem  +  0.1785714286vw , 1rem )) {
+    .step__card-text {
+      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 70);
+    }
+}
 }
 
 @media (any-hover: hover) {
   .terms__box-link:hover {
     opacity: 0.8;
+  }
+
+  .step__card:hover {
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }

@@ -615,3 +615,70 @@
 		}
 	}
 }
+
+// step ========================================================================================================================================================
+.step {
+	@include adaptiveValue("margin-bottom", 100, 40);
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 50, 30);
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 330px);
+		justify-content: space-between;
+		gap: 30px;
+
+		@media (max-width:$mobile) {
+			justify-content: center;
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	&__card {
+		position: relative;
+		background: #FFFFFF;
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+		border-radius: 20px;
+		padding: 35px;
+		transition: all 0.3s ease 0s;
+
+		@media (max-width:$mobile) {
+			padding: 25px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: translateY(-10px);
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 64px;
+			height: 50px;
+			top: 10px;
+			right: 10px;
+			background: url(../img/icon/plus-step.svg) center center no-repeat;
+		}
+	}
+
+	&__card-title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 48, 40);
+		line-height: math.div(59, 48);
+		margin-bottom: 11px;
+		color: $blColor;
+	}
+
+	&__card-text {
+		font-weight: 600;
+		@include adaptiveValue("font-size", 16, 14);
+		line-height: math.div(20, 16);
+	}
+}
+
+.title {}
