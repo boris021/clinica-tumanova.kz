@@ -8,7 +8,8 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper, {
-	Navigation
+	Navigation,
+	Pagination
 } from 'swiper';
 /*
 Основні модулі слайдера:
@@ -34,7 +35,7 @@ function initSliders() {
 		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation],
+			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 2.5,
@@ -46,6 +47,11 @@ function initSliders() {
 			navigation: {
 				prevEl: '.swiper-buttonway-prev',
 				nextEl: '.swiper-buttonway-next',
+			},
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
 			},
 
 			// Брейкпоінти
@@ -77,10 +83,8 @@ function initSliders() {
 		});
 
 		// второй слайдер
-		new Swiper('.swiper-spec', { // Вказуємо склас потрібного слайдера
-			// Підключаємо модулі слайдера
-			// для конкретного випадку
-			modules: [Navigation],
+		new Swiper('.swiper-spec', {
+			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3,
@@ -90,9 +94,16 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-buttonway-prev',
-				nextEl: '.swiper-buttonway-next',
+				prevEl: '.swiper-buttonspec-prev',
+				nextEl: '.swiper-buttonspec-next',
 			},
+
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+
 
 			// Брейкпоінти
 			breakpoints: {

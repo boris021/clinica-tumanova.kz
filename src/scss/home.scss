@@ -299,9 +299,7 @@
 
 // spec ========================================================================================================================================================
 .spec {
-	@include adaptiveValue("margin-bottom", 100, 40);
-
-	&__container {}
+	margin-bottom: 120px;
 
 	&__content {
 		position: relative;
@@ -309,17 +307,21 @@
 		align-items: center;
 		justify-content: space-between;
 		@include adaptiveValue("margin-bottom", 50, 25);
-
-
 	}
 
 	&__title {}
 
-	&__slider {}
+	&__slider {
+		position: relative;
+	}
 
-	&__wrapper {}
+	&__wrapper {
+		position: relative;
+	}
 
-	&__slide {}
+	&__slide {
+		position: relative;
+	}
 
 	&__slide-content {
 		background: #FFFFFF;
@@ -381,23 +383,118 @@
 	}
 }
 
-.title {}
+// terms ========================================================================================================================================================
+.terms {
+	@include adaptiveValue("margin-bottom", 100, 40);
 
-.way {
+	@media (max-width:$mobile) {
+		margin-top: 50px;
+	}
 
-	&__btn {}
+	&__row {
+		padding: 50px 0;
+		border-radius: 50%;
+		position: relative;
+
+		@media (max-width:$mobile) {
+			padding: 30px 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: url(../img/terms-bg.jpg) center center/cover no-repeat;
+			border-radius: 50px;
+			z-index: -1;
+
+			@media (max-width:$mobile) {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&__title {
+		text-align: center;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 48, 28);
+		line-height: math.div(59, 48);
+		@include adaptiveValue("margin-bottom", 28, 15);
+	}
+
+	&__text {
+		width: 811px;
+		background: rgba(255, 255, 255, 0.54);
+		border-radius: 0px 20px 20px 0px;
+		padding: 24px 24px 24px 80px;
+		@include adaptiveValue("margin-bottom", 28, 15);
+		@include adaptiveValue("font-size", 16, 14);
+
+		@media (max-width:$mobile) {
+			width: 95%;
+			padding: 20px;
+		}
+
+		p {
+			font-weight: 600;
+			font-size: 16px;
+			line-height: math.div(20, 16);
+
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__box {
+		width: 506px;
+		background: #04607A;
+		box-shadow: 0px 6px 20px rgba(87, 205, 221, 0.65);
+		border-radius: 0px 20px 20px 0px;
+		padding: 24px 24px 24px 80px;
+		color: #fff;
+
+		@media (max-width:$mobile) {
+			width: 95%;
+			padding: 20px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__box-text {
+		font-weight: 600;
+		line-height: math.div(20, 16);
+		margin-bottom: 13px;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+
+	&__box-link {
+		transition: all 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&__box-item {
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 29px;
+		@include adaptiveValue("font-size", 24, 18);
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		img {
+			margin-right: 12px;
+		}
+	}
 }
-
-.way-prev {}
-
-.swiper-buttonway-prev {}
-
-.way-next {}
-
-.swiper-buttonway-next {}
-
-.swiper {}
-
-.swiper-wrapper {}
-
-.swiper-slide {}
