@@ -687,12 +687,22 @@ body::after {
   transition: all 0.3s ease 0s;
 }
 
-.menu__item:last-child {
-  margin-right: 0;
-}
-
 .menu__item:hover {
   opacity: 0.9;
+}
+
+.header__phone {
+  display: none;
+}
+
+.header__phone-link {
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 5;
+}
+
+.header__phone-link:not(:last-child) {
+  margin-right: 20px;
 }
 
 .icon-menu {
@@ -1258,10 +1268,16 @@ body::after {
           align-items: center;
 }
 
-.spec__slide-content img {
+.spec__slide-content-img {
   width: 171px;
-  border-radius: 10px;
+  height: 208px;
   margin-right: 18px;
+}
+
+.spec__slide-content-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 .spec__slide-box-name {
@@ -3917,17 +3933,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     left: 0;
   }
 
-  .menu__body::before {
-    content: "";
-    position: absolute;
-    position: fixed;
-    height: 70px;
-    width: 100%;
-    top: 0px;
-    left: 0;
-    z-index: 50;
-  }
-
   .menu__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3950,6 +3955,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .menu__item:last-child {
     margin-bottom: 30px;
+  }
+
+  .header__phone {
+    display: block;
+    z-index: 5;
   }
 
   .icon-menu {
@@ -4085,6 +4095,25 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     width: 100px;
   }
 
+  .header__phone-link:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  .header__phone-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 16px;
+  }
+
+  .header__phone-link:not(:last-child) {
+    margin-bottom: 7px;
+  }
+
   .footer__container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4136,16 +4165,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-weight: 400;
   }
 
+  .spec__slide-content-img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
   .spec__slide-content {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .spec__slide-content img {
-    margin-right: 0;
-    margin-bottom: 15px;
   }
 
   .spec__slide-box-name {
