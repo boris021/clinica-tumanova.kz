@@ -1119,7 +1119,6 @@ body::after {
 }
 
 .way__slide-bg {
-  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
